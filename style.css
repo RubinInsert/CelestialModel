@@ -1,0 +1,62 @@
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 70px);
+    grid-template-rows: repeat(10, 70px);
+    gap: 5px;
+    /*max-width: 950px;*/
+    margin: 0 auto;
+}
+.element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #000;
+    text-align: center;
+    transition: 1s;
+}
+.element:hover {
+    transform: scale(1.05);
+}
+.atomic-number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.name {
+    position: absolute;
+    bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.nonmetal {
+    background-color: yellow;
+}
+.alkali-metal {
+    background-color: lightcoral;
+}
+.alkaline-earth-metal {
+    background-color: plum
+}
+.transition-metal {
+    background-color: lightblue;
+}
+.post-transition-metal {
+    background-color: green;
+}
+.metalloid {
+    background-color: greenyellow;
+}
+.noble-gas {
+    background-color: pink;
+}
+.lanthanide {
+    background-color: aqua;
+}
+.actinide {
+    background-color: lightgreen;
+}
