@@ -1,3 +1,30 @@
+.nonmetal, .halogen {
+    background-color: yellow;
+}
+.alkali-metal {
+    background-color: lightcoral;
+}
+.alkaline-earth-metal {
+    background-color: plum
+}
+.transition-metal {
+    background-color: lightblue;
+}
+.post-transition-metal {
+    background-color: green;
+}
+.metalloid {
+    background-color: greenyellow;
+}
+.noble-gas {
+    background-color: pink;
+}
+.lanthanide {
+    background-color: aqua;
+}
+.actinide {
+    background-color: lightgreen;
+}
 .hydrogen {
     grid-row: 1;
     grid-column: 1;

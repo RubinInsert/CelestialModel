@@ -8,6 +8,11 @@
         <link rel="stylesheet" type="text/css" href="./elementPositioning.css"/>
     </head>
     <body>
+        <div class="welcome-section">
+            <h1 class="title">Celestial Model</h1>
+            <p>The celestial model provides a unique visualization of an atom, where each element is represented as a celestial body in a dynamic 3D space. By clicking on an element, users can explore detailed information about its atomic structure, including electron configurations, atomic mass, and other properties. This interactive model helps in understanding the complex nature of atoms in an engaging and intuitive way.</p>
+            <p><b>Click on an element to view its properties</b></p>
+        </div>
         <div class="periodic-table">
             <div class="element hydrogen nonmetal">
                 <div class="atomic-number">1</div>
@@ -525,7 +530,14 @@
                 <div class="name">Lawrencium</div>
             </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="scripts.js"></script>
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/"
+    }
+  }
+</script>
+    <script src="scripts.js" type="module"></script>
 </body>
 </html>

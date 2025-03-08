@@ -1,8 +1,47 @@
+/* https://coolors.co/palette/0d1321-1d2d44-3e5c76-748cab-f0ebd8 */
+@font-face {
+    font-family: 'Outfit';
+    src: url('./fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #0D1321;
+    display: flex;
+    flex-direction: row;
+}
+.welcome-section {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    background-color: #1D2D44;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    gap: 2rem;
+    transition: 2s;
+}
+.welcome-section:hover {
+    filter: brightness(1.2);
+}
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
 .periodic-table {
     display: grid;
-    grid-template-columns: repeat(18, 70px);
-    grid-template-rows: repeat(10, 70px);
-    gap: 5px;
+    grid-template-columns: repeat(18, 4rem);
+    grid-template-rows: repeat(10, 4rem);
+    gap: 0.5rem;
+    width: 100%;
     /*max-width: 950px;*/
     margin: 0 auto;
 }
@@ -11,8 +50,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 70px;
-    height: 70px;
+    min-width: 4rem;
+    min-height: 4rem;
     border: 1px solid #000;
     text-align: center;
     transition: 1s;
@@ -34,7 +73,9 @@
     align-items: center;
 }
 .info-content {
-    background-color: white;
+    font-family: Outfit, sans-serif;
+    color: white;
+    background-color: #748CAB;
     display: grid;
     gap: 10px;
     grid-template-columns: 350px 1fr;
@@ -44,7 +85,7 @@
     width: 800px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: white;
+    transition: 2s;
 }
 #targetElementName {
     font-size: 24px;
@@ -87,30 +128,52 @@
     font-size: 12px;
     font-weight: bold;
 }
-.nonmetal, .halogen {
-    background-color: yellow;
+
+.switch-button {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
 }
-.alkali-metal {
-    background-color: lightcoral;
+
+.switch-button label {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
-.alkaline-earth-metal {
-    background-color: plum
+
+.switch-button input[type="radio"] {
+    display: none;
 }
-.transition-metal {
-    background-color: lightblue;
+
+.switch-button input[type="radio"]:checked + label {
+    background-color: #7E57C2;
+    color: white;
 }
-.post-transition-metal {
-    background-color: green;
-}
-.metalloid {
-    background-color: greenyellow;
-}
-.noble-gas {
-    background-color: pink;
-}
-.lanthanide {
-    background-color: aqua;
-}
-.actinide {
-    background-color: lightgreen;
+
+
+
+@media (max-width: 768px) { /* Phone Version */
+    .periodic-table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .element {
+    }
+    body {
+        flex-direction: column;
+    }
 }
