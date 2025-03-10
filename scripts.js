@@ -35,7 +35,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;  // Smooth camera movement
 controls.dampingFactor = 0.25;
 controls.screenSpacePanning = false;
-controls.maxPolarAngle = Math.PI / 2;  // Limit vertical rotation
+//controls.maxPolarAngle = Math.PI / 2;  // Limit vertical rotation
 
 // Animation loop
 function animate() {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const infoContent = document.createElement('div');
     infoContent.classList.add('info-content');
     infoContent.innerHTML = `<div id="targetElementVisual"><div class="switch-button">
-    <input type="radio" id="bohr" name="visualType" value="BOHR">
+    <input type="radio" id="bohr" name="visualType" value="BOHR" checked>
     <label for="bohr">BOHR</label>
     <input type="radio" id="celestial" name="visualType" value="Celestial">
     <label for="celestial">CELESTIAL</label>
@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('targetElementAtomicNumber').innerText = `Atomic Number: ${element.number}`;
             document.getElementById('targetElementSymbol').innerText = `Symbol: ${element.symbol}`;
             document.getElementById('targetElementDescription').innerText = element.summary;
+
+            // Remove previous model if exists
+            if (model !== null) {
+                scene.remove(model);
+                model = null;
+            }
             // Add 3D Models to Scene
             loader.load(
                 element.bohr_model_3d,
@@ -94,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     model = gltf.scene;
                     model.scale.set(0, 0, 0);
                     scene.add(model);
+                    model.rotation.x = Math.PI / 2;
                     console.log("Animations Found:", gltf.animations);  // Debug Animation List
                     mixer = new THREE.AnimationMixer(model);
                     const action = mixer.clipAction(gltf.animations[0]); // First animation
