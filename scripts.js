@@ -81,8 +81,25 @@ document.addEventListener('DOMContentLoaded', function() {
     elements.forEach(function(element) {
         element.addEventListener('click', function(e) {
             let chosenElement = e.currentTarget;
-            console.log(chosenElement);
-            let element = elementData[chosenElement.getElementsByClassName('atomic-number')[0].innerText - 1];
+            let atomicNumberElement = chosenElement.getElementsByClassName('atomic-number')[0];
+            if (!atomicNumberElement) {
+                console.error("No element with class 'atomic-number' found in chosenElement");
+                return;
+            }
+    
+            // Get the atomic number and ensure it's a valid number
+            let atomicNumber = parseInt(atomicNumberElement.innerText, 10);
+            if (isNaN(atomicNumber) || atomicNumber < 1 || atomicNumber > elementData.length) {
+                console.error("Invalid atomic number:", atomicNumber);
+                return;
+            }
+    
+            // Get the element data
+            let element = elementData[atomicNumber - 1];
+            if (!element) {
+                console.error("No element data found for atomic number:", atomicNumber);
+                return;
+            }
             document.getElementById('targetElementName').textContent = element.name;
             document.getElementById('targetElementAtomicNumber').innerText = `Atomic Number: ${element.number}`;
             document.getElementById('targetElementSymbol').innerText = `Symbol: ${element.symbol}`;
