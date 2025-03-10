@@ -6,7 +6,7 @@ let elementData;
 
 // Fetch element data from JSON file
 (async () => {
-    const response = await fetch('http://127.0.0.1:5500/CelestialModel/elementsInfo.json');
+    const response = await fetch('./elementsInfo.json');
     const data = await response.json();
     elementData = data.elements;
     console.log(elementData);
