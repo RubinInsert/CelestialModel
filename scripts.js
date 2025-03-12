@@ -9,7 +9,6 @@ let elementData;
     const response = await fetch('./elementsInfo.json');
     const data = await response.json();
     elementData = data.elements;
-    console.log(elementData);
 })();
 
 // Setting up 3D Scene
@@ -18,6 +17,7 @@ const camera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 const clock = new THREE.Clock();
 renderer.setSize(350, 350);
+renderer.setPixelRatio(2); // Adjust resolution
 camera.position.setZ(30);
 renderer.render(scene, camera);
 
@@ -143,3 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Add event listener for window resize
+window.addEventListener('resize', onWindowResize, false);
+
+// Initial call to set the correct size
+onWindowResize();

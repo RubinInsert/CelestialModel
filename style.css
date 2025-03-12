@@ -21,7 +21,20 @@
         opacity: 1;
     }
 }
-
+canvas {
+    width: 21rem!important;
+    height: 21rem!important;
+  }
+#other-pages {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    border: white 2px solid;
+    padding: 5px;
+    gap: 5px;
+    color: white;
+    
+}
 .info-content {
     animation: flipCard 1.5s backwards;
     transform-style: preserve-3d;
@@ -51,7 +64,7 @@ body {
     padding: 2rem;
     text-align: center;
     gap: 2rem;
-    transition: 2s;
+    transition: filter 2s;
 }
 .welcome-section:hover {
     filter: brightness(1.2);
@@ -106,11 +119,10 @@ body {
     background-color: #748CAB;
     display: grid;
     gap: 0.625rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     padding: 1.25rem;
     border-radius: 0.625rem;
-    width: 80vw;
     max-width: 50rem;
     height: auto;
     max-height: 80vh;
@@ -131,10 +143,11 @@ body {
 }
 #targetElementVisual {
     position: relative;
-    width: 350px;
     height: fit-content;
+    width: fit-content;
 }
 #targetElementDescription {
+    width: inherit;
     grid-column: span 2;
     border: #000 3px solid;
     padding: 10px;
@@ -142,8 +155,9 @@ body {
     
 }
 #targetElementInfo {
+    width: inherit;
     border: #000 3px solid;
-    padding: 5px;
+    padding: 10px;
     border-radius: 20px;
 }
 .atomic-number {
@@ -204,6 +218,10 @@ body {
     }
 }
 @media (max-width: 768px) { /* Phone Version */
+    canvas {
+        width: 100%!important;
+        height: 100%!important;
+      }
     .periodic-table {
         display: flex;
         flex-wrap: wrap;
@@ -217,6 +235,7 @@ body {
         align-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        width: 80vw;
         max-width: none;
         height: auto;
         max-height: none;
