@@ -6,6 +6,7 @@
         <title>Celestial Model</title>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
         <link rel="stylesheet" type="text/css" href="./elementPositioning.css"/>
+        <link rel="stylesheet" type="text/css" href="./flipCards.css"/>
     </head>
     <body>
         <div class="welcome-section">
@@ -530,6 +531,35 @@
                 <div class="name">Lawrencium</div>
             </div>
     </div>
+    <div class="info-screen">
+        <div class="info-content">
+            <div id="targetElementVisual">
+                <div class="switch-button">
+                    <input type="radio" id="bohr" name="visualType" value="BOHR" checked>
+                    <label for="bohr">BOHR</label>
+                    <input type="radio" id="celestial" name="visualType" value="Celestial">
+                    <label for="celestial">CELESTIAL</label>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div id="targetElementInfo">
+                            <div id="targetElementName">Info Screen Content</div>
+                            <div id="targetElementAtomicNumber"></div>
+                            <div id="targetElementSymbol"></div>
+                            <div id="targetElementAtomicMass"></div>
+                            <img class="flip-card-icon" src="/icons/FlashCardFlip.svg" alt="Flip Icon">
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div id="targetElementDescription"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     <script type="importmap">
   {
     "imports": {
@@ -539,5 +569,6 @@
   }
 </script>
     <script src="scripts.js" type="module"></script>
+    <script src="flipCards.js"></script>
 </body>
 </html>
