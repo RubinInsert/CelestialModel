@@ -21,11 +21,11 @@ renderer.setPixelRatio(2); // Adjust resolution
 camera.position.setZ(30);
 renderer.render(scene, camera);
 
-// Lighting
+// Lighting for 3D Scene
 const light = new THREE.AmbientLight(0xffffff, 2);
 scene.add(light);
 
-// Loading 3D Models from External
+// Loading 3D Models from External link (found in JSON files)
 const loader = new GLTFLoader();
 let model = null;
 let mixer = null;
@@ -47,7 +47,7 @@ function animate() {
     }
     const delta = clock.getDelta();
     if (mixer) {
-        mixer.update(delta);
+        mixer.update(delta); // Call the animation on the model
     }
     renderer.render(scene, camera);
 }
@@ -56,22 +56,8 @@ animate();
 // DOM Content Loaded event
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.element');
-    const infoScreen = document.createElement('div');
-    infoScreen.classList.add('info-screen');
-    const infoContent = document.createElement('div');
-    infoContent.classList.add('info-content');
-    infoContent.innerHTML = `<div id="targetElementVisual"><div class="switch-button">
-    <input type="radio" id="bohr" name="visualType" value="BOHR" checked>
-    <label for="bohr">BOHR</label>
-    <input type="radio" id="celestial" name="visualType" value="Celestial">
-    <label for="celestial">CELESTIAL</label>
-</div></div>
-                            <div id="targetElementInfo"><div id="targetElementName">Info Screen Content</div>
-                            <div id="targetElementAtomicNumber"></div>
-                            <div id="targetElementSymbol"></div>
-                            <div id="targetElementAtomicMass"></div>
-                            </div>
-                            <div id="targetElementDescription"></div>`;
+    const infoScreen = document.getElementsByClassName('info-screen')[0];
+    const infoContent = document.getElementsByClassName('info-content')[0];
     infoScreen.appendChild(infoContent);
     document.body.appendChild(infoScreen);
     renderer.domElement.style.borderRadius = "20px";

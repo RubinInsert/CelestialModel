@@ -118,7 +118,7 @@ body {
     grid-template-rows: auto 1fr;
     padding: 1.25rem;
     border-radius: 0.625rem;
-    max-width: 50rem;
+    width: 50vw;
     height: auto;
     max-height: 80vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -142,16 +142,12 @@ body {
     width: fit-content;
 }
 #targetElementDescription {
-    width: inherit;
     grid-column: span 2;
-    border: #000 3px solid;
     padding: 10px;
     border-radius: 20px;
     
 }
 #targetElementInfo {
-    width: inherit;
-    border: #000 3px solid;
     padding: 10px;
     border-radius: 20px;
 }
@@ -246,6 +242,7 @@ body {
         max-width: none;
         height: 80vh;
         max-height: none;
+        position: relative;
     }
     #targetElementInfo {
         width: inherit;
