@@ -129,8 +129,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+function resizeCanvasToDisplaySize() { // Allow Three JS canvas to resize with CSS
+    const canvas = renderer.domElement;
+    // look up the size the canvas is being displayed
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+  
+    // adjust displayBuffer size to match
+    if (canvas.width !== width || canvas.height !== height) {
+      // you must pass false here or three.js sadly fights the browser
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+        camera.lookAt(0, 0, 0);
+      // update any render target sizes here
+    }
+  }
 // Add event listener for window resize
-window.addEventListener('resize', onWindowResize, false);
-
-// Initial call to set the correct size
-onWindowResize();
+window.addEventListener('resize', resizeCanvasToDisplaySize, false);

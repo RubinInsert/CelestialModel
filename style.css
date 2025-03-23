@@ -215,7 +215,8 @@ body {
 @media (max-width: 768px) { /* Phone Version */
     canvas {
         width: 100%!important;
-        height: 100%!important;
+        height: auto!important; /* IOS browser isnt a big fan of using 100% height and maintaining aspect ratio */
+        aspect-ratio: 1 / 1;
       }
     .welcome-section {
         width: 100vw;
