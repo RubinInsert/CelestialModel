@@ -60,7 +60,7 @@ body {
     flex-direction: column;
     font-size: 1vw;
     padding: 2rem;
-    text-align: center;
+    text-align: justify;
     gap: 2rem;
     transition: filter 2s;
 }

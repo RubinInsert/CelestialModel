@@ -160,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 model = null;
             }
             // Add 3D Models to Scene
+            clearScene(); // Clear any pre-existing models in scene
             loadModel(currentElement.bohr_model_3d, modelType.BOHR);
 
             infoScreen.style.display = 'flex';
@@ -182,10 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
     infoScreen.addEventListener('click', function(e) {
         if (e.target === infoScreen) {
             infoScreen.style.display = 'none';
-            if (model !== null) {
-                scene.remove(model);
-                model = null;
-            }
+            clearScene();
+            document.getElementById("bohr").checked = true;
+
         }
     });
 });
