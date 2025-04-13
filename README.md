@@ -1,6 +1,6 @@
 # Celestial Model
 A website to showcase a new 3D representation of atoms similar to Erwin Schrödinger's quantum mechanical model of the atom. The website will integrate [Three JS](https://threejs.org/) with custom Compute, Fragment, and Vertex Shader code which allows
-for high-performance rendering of the model which can contain tens of thousands of particles. This has not been integrated into the website yet, but can be found at the repository; [CelestialModelPlayground](https://github.com/RubinInsert/CelestialModelPlayground).
+for high-performance rendering of the model which can contain tens of thousands of particles. This has not been integrated into the website yet, but can be found at the [CelestialModelPlayground](https://github.com/RubinInsert/CelestialModelPlayground) repository, with a live model example found [here](https://rubininsert.github.io/CelestialModelPlayground/).
 
 https://github.com/user-attachments/assets/2dcdaded-103e-4e89-a2da-2607709a0f9c
 
