@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { renderer, scene, camera, clock } from './sceneSetup.js';
 import { controls } from './controls.js';
 import { modelType, mixer, model, modelScale } from './modelLoader.js';
-import CelestialModel from '/CelestialModelLib/CelestialModel.js';
+import CelestialModel from '../CelestialModelLib/CelestialModel.js';
 function animate() {
     requestAnimationFrame(animate);
         CelestialModel.updateParticles();
