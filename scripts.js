@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Load model here
       document.getElementById(
         "targetElementImage"
-      ).src = `https://rubininsert.github.io/CelestialModelPlayground/?Element=${currentElement.symbol}`;
+      ).src = `https://rubininsert.github.io/CelestialModelPlayground/?Controls=true&Element=${currentElement.symbol}`;
       infoScreen.style.display = "flex";
     });
   });
