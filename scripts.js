@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event listener to each element
   elements.forEach(function (element) {
     element.addEventListener("click", function (e) {
+
+      // Audio Stuff
+      let audio = new Audio(`./audio/testaudio.m4a`);
+      audio.play();
+
       let chosenElement = e.currentTarget;
       let atomicNumberElement =
         chosenElement.getElementsByClassName("atomic-number")[0];
