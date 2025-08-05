@@ -1,5 +1,6 @@
 let elementData;
 let currentElement = null;
+let audio = null;
 // Fetch element data from JSON file
 (async () => {
   const response = await fetch("./elementsInfo.json");
@@ -19,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   elements.forEach(function (element) {
     element.addEventListener("click", function (e) {
 
-      // Audio Stuff
-      let audio = new Audio(`./audio/testaudio.m4a`);
-      audio.play();
 
       let chosenElement = e.currentTarget;
       let atomicNumberElement =
@@ -46,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Get the element data
       currentElement = elementData[atomicNumber - 1];
+
+      // Audio Stuff
+      audio = new Audio(`./audio/${currentElement.symbol}.mp3`);
+      audio.play();
       if (!currentElement) {
         console.error("No element data found for atomic number:", atomicNumber);
         return;
@@ -72,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
   infoScreen.addEventListener("click", function (e) {
     if (e.target === infoScreen) {
       infoScreen.style.display = "none";
-      clearScene();
+      audio.pause();
+      audio.currentTime = 0;
       document.getElementById("bohr").checked = true;
     }
   });
