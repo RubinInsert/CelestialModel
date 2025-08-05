@@ -44,6 +44,7 @@
 }
 body {
   background-color: #0d1321;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   background-image: url("./images/bg.jpg");
